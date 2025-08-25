@@ -1,103 +1,192 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="min-h-screen" style={{ backgroundColor: '#f8fafc' }}>
+      {/* Hero Section */}
+      <div 
+        className="py-20 text-center"
+        style={{ 
+          background: 'linear-gradient(90deg, #22c55e, #eab308)',
+          color: 'white' 
+        }}
+      >
+        <div className="max-w-4xl mx-auto px-4">
+          <h1 className="text-5xl font-bold mb-6">
+            Welcome to Tyche-Edge
+          </h1>
+          <p className="text-xl mb-8">
+            Your premier destination for data-driven sports betting insights
+          </p>
+          <div className="flex gap-4 justify-center">
+            <button 
+              className="px-6 py-3 rounded-lg font-medium"
+              style={{ backgroundColor: '#eab308', color: 'white' }}
+            >
+              View Predictions
+            </button>
+            <button 
+              className="px-6 py-3 rounded-lg font-medium border-2"
+              style={{ borderColor: 'white', color: 'white' }}
+            >
+              Join Community
+            </button>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+
+      {/* Stats Section */}
+      <div className="py-16 max-w-6xl mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
+          <div 
+            className="text-center p-4 rounded-lg"
+            style={{ backgroundColor: 'white', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}
+          >
+            <div className="text-2xl font-bold" style={{ color: '#22c55e' }}>89.2%</div>
+            <div className="text-sm text-gray-600">Model Accuracy</div>
+          </div>
+          
+          <div 
+            className="text-center p-4 rounded-lg"
+            style={{ backgroundColor: 'white', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}
+          >
+            <div className="text-2xl font-bold" style={{ color: '#eab308' }}>+12.4%</div>
+            <div className="text-sm text-gray-600">Average ROI</div>
+          </div>
+          
+          <div 
+            className="text-center p-4 rounded-lg"
+            style={{ backgroundColor: 'white', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}
+          >
+            <div className="text-2xl font-bold text-gray-700">2,847</div>
+            <div className="text-sm text-gray-600">Active Users</div>
+          </div>
+          
+          <div 
+            className="text-center p-4 rounded-lg"
+            style={{ backgroundColor: 'white', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}
+          >
+            <div className="text-2xl font-bold text-gray-700">15,293</div>
+            <div className="text-sm text-gray-600">Predictions Made</div>
+          </div>
+        </div>
+
+        {/* Sample Predictions */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold text-center mb-8">Today's Featured Predictions</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* NFL Game */}
+            <div 
+              className="p-6 rounded-lg"
+              style={{ backgroundColor: 'white', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}
+            >
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-sm font-medium text-gray-500">NFL</span>
+                <span 
+                  className="text-xs px-2 py-1 rounded-full"
+                  style={{ backgroundColor: '#dcfce7', color: '#22c55e' }}
+                >
+                  87% Confidence
+                </span>
+              </div>
+              <h3 className="font-semibold mb-4">Chiefs vs Bills</h3>
+              <div className="space-y-2 mb-4">
+                <div className="flex justify-between">
+                  <span>Prediction:</span>
+                  <span className="font-semibold" style={{ color: '#22c55e' }}>Chiefs +3</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>ML Odds:</span>
+                  <span className="font-semibold" style={{ color: '#22c55e' }}>+145</span>
+                </div>
+              </div>
+              <div 
+                className="w-full h-2 rounded-full mb-2"
+                style={{ backgroundColor: '#e5e7eb' }}
+              >
+                <div 
+                  className="h-2 rounded-full"
+                  style={{ 
+                    width: '87%', 
+                    background: 'linear-gradient(90deg, #22c55e, #eab308)' 
+                  }}
+                ></div>
+              </div>
+              <p className="text-xs text-gray-600">Model shows strong value on spread</p>
+            </div>
+
+            {/* MLB Game */}
+            <div 
+              className="p-6 rounded-lg"
+              style={{ backgroundColor: 'white', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}
+            >
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-sm font-medium text-gray-500">MLB</span>
+                <span 
+                  className="text-xs px-2 py-1 rounded-full"
+                  style={{ backgroundColor: '#fef3c7', color: '#eab308' }}
+                >
+                  92% Confidence
+                </span>
+              </div>
+              <h3 className="font-semibold mb-4">Yankees vs Dodgers</h3>
+              <div className="space-y-2 mb-4">
+                <div className="flex justify-between">
+                  <span>Prediction:</span>
+                  <span className="font-semibold" style={{ color: '#eab308' }}>Over 8.5</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Total Odds:</span>
+                  <span className="font-semibold" style={{ color: '#ef4444' }}>-110</span>
+                </div>
+              </div>
+              <div 
+                className="w-full h-2 rounded-full mb-2"
+                style={{ backgroundColor: '#e5e7eb' }}
+              >
+                <div 
+                  className="h-2 rounded-full"
+                  style={{ 
+                    width: '92%', 
+                    background: 'linear-gradient(90deg, #22c55e, #eab308)' 
+                  }}
+                ></div>
+              </div>
+              <p className="text-xs text-gray-600">Strong offensive matchup expected</p>
+            </div>
+
+            {/* Community Pick */}
+            <div 
+              className="p-6 rounded-lg"
+              style={{ backgroundColor: 'white', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}
+            >
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-sm font-medium text-gray-500">Community Pick</span>
+                <span 
+                  className="text-xs px-2 py-1 rounded-full"
+                  style={{ backgroundColor: '#dcfce7', color: '#22c55e' }}
+                >
+                  Won
+                </span>
+              </div>
+              <h3 className="font-semibold mb-4">Lakers vs Warriors</h3>
+              <div className="space-y-2 mb-4">
+                <div className="flex justify-between">
+                  <span>Pick:</span>
+                  <span className="font-semibold">Lakers ML</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Profit:</span>
+                  <span className="font-semibold" style={{ color: '#22c55e' }}>+2.4u</span>
+                </div>
+              </div>
+              <p className="text-xs text-gray-600">
+                Great call by <span className="font-medium">@SportsBettor23</span>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }

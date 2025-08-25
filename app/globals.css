@@ -1,26 +1,224 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Tyche-Edge New Color Scheme */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Colors */
+  --background: #F2EFE8;        /* Cream/Off-White background */
+  --header-dark-green: #164A2F; /* Dark green for headers/banners */
+  --primary-gold: #B59E5B;      /* Gold for primary buttons */
+  --secondary-charcoal: #36454F; /* Deep charcoal for secondary buttons */
+  
+  /* Supporting Colors */
+  --white: #FFFFFF;
+  --light-gray: #F8F9FA;
+  --medium-gray: #6C757D;
+  --dark-gray: #343A40;
+  --text-primary: #2D3748;
+  --text-secondary: #718096;
+  
+  /* Status Colors */
+  --win-color: #22C55E;         /* Keep green for wins */
+  --loss-color: #EF4444;        /* Keep red for losses */
+  --push-color: #F59E0B;        /* Keep orange for pushes */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    @apply border-gray-200;
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Header/Banner Styling */
+  .tyche-header {
+    background-color: var(--header-dark-green);
+    color: white;
+  }
+  
+  .tyche-gradient {
+    background: linear-gradient(90deg, var(--header-dark-green), var(--primary-gold));
+    color: white;
+  }
+  
+  /* Card Styling */
+  .tyche-card {
+    background: var(--white);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid rgba(54, 69, 79, 0.1);
+    padding: 1.5rem;
+  }
+  
+  /* Button Styling */
+  .tyche-button-primary {
+    background-color: var(--primary-gold);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 4px rgba(181, 158, 91, 0.2);
+  }
+  
+  .tyche-button-primary:hover {
+    background-color: #A08D52;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(181, 158, 91, 0.3);
+  }
+  
+  .tyche-button-secondary {
+    background-color: var(--secondary-charcoal);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .tyche-button-secondary:hover {
+    background-color: #2A3A42;
+    transform: translateY(-1px);
+  }
+  
+  .tyche-button-outline {
+    border: 2px solid var(--primary-gold);
+    color: var(--primary-gold);
+    background: transparent;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+  
+  .tyche-button-outline:hover {
+    background: var(--primary-gold);
+    color: white;
+  }
+  
+  /* Navigation Styling */
+  .nav-active {
+    background: linear-gradient(45deg, var(--header-dark-green), var(--primary-gold));
+    color: white;
+  }
+  
+  /* Stats Card Styling */
+  .stat-card {
+    background: var(--white);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid rgba(54, 69, 79, 0.1);
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--header-dark-green);
+  }
+  
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+  
+  /* Prediction Card Styling */
+  .prediction-card {
+    background: var(--white);
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border: 1px solid rgba(54, 69, 79, 0.1);
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+  }
+  
+  .prediction-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
+  
+  /* Confidence Bar */
+  .confidence-bar {
+    width: 100%;
+    height: 0.5rem;
+    background: rgba(54, 69, 79, 0.1);
+    border-radius: 0.25rem;
+  }
+  
+  .confidence-fill {
+    height: 0.5rem;
+    background: linear-gradient(90deg, var(--header-dark-green), var(--primary-gold));
+    border-radius: 0.25rem;
+  }
+  
+  /* Logo/Brand Styling */
+  .tyche-logo {
+    background: linear-gradient(45deg, var(--header-dark-green), var(--primary-gold));
+  }
+}
+
+@layer utilities {
+  /* Background Colors */
+  .bg-tyche-cream {
+    background-color: var(--background);
+  }
+  
+  .bg-tyche-dark-green {
+    background-color: var(--header-dark-green);
+  }
+  
+  .bg-tyche-gold {
+    background-color: var(--primary-gold);
+  }
+  
+  .bg-tyche-charcoal {
+    background-color: var(--secondary-charcoal);
+  }
+  
+  /* Text Colors */
+  .text-tyche-dark-green {
+    color: var(--header-dark-green);
+  }
+  
+  .text-tyche-gold {
+    color: var(--primary-gold);
+  }
+  
+  .text-tyche-charcoal {
+    color: var(--secondary-charcoal);
+  }
+  
+  /* Win/Loss/Push Colors */
+  .win-color {
+    color: var(--win-color);
+    background-color: rgba(34, 197, 94, 0.1);
+    border-color: rgba(34, 197, 94, 0.2);
+  }
+  
+  .loss-color {
+    color: var(--loss-color);
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.2);
+  }
+  
+  .push-color {
+    color: var(--push-color);
+    background-color: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.2);
+  }
 }
